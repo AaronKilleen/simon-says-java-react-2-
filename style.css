@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    text-align: center;
+    margin-top: 130px;
+}
+
+.panel {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.panel:hover {
+    box-shadow: inset 0px 0px 0px 3px cyan;
+    box-sizing: border-box;
+}
+
+.bottom-right-panel {
+    background-color: red;
+    border-bottom-right-radius: 100%;
+}
+
+.bottom-left-panel {
+    background-color: blue;
+    border-bottom-left-radius: 100%;
+}
+
+.top-right-panel {
+    background-color: green;
+    border-top-right-radius: 100%;
+}
+
+.top-left-panel {
+    background-color: yellow;
+    border-top-left-radius: 100%;
+}
+
+.center {
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color:black;
+    top: 235px;
+    left: 860px;
+}
+
+.active {
+    background-color: white;
+}
