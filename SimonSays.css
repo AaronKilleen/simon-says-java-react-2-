@@ -1,0 +1,90 @@
+
+body{
+  background-color: #444;
+  font-family: Ubuntu, sans-serif;
+}
+
+.simonContainer {
+  height: 400px;
+  margin-left: 60px;
+  position: relative;
+}
+
+.simonBackground {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+} 
+
+.simon {
+  transition: all 1s;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  clip: rect(0px, 200px, 400px, 0px);
+}
+
+.hold {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  clip: rect(0px, 400px, 400px, 200px);
+}
+
+#redButton .simon {
+  background-color: red;
+  transform:rotate(90deg);
+}
+
+#blueButton {
+  transform: rotate(90deg);
+}
+
+#blueButton .simon {
+  background-color: blue;
+  transform: rotate(90deg);
+}
+
+#yellowButton {
+  transform: rotate(180deg);
+}
+
+#yellowButton .simon {
+  background-color: yellow;
+  transform: rotate(90deg);
+}
+
+#greenButton {
+  transform: rotate(270deg);
+}
+
+#greenButton .simon {
+  background-color: green;
+  transform: rotate(90deg);
+}
+
+
+.innerCircle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #444;
+  border-radius: 160px;
+  top: 50px;
+  left: 50px; 
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
+  color: white;
+}
+.innerCircle .content {
+  position: absolute;
+  display: block;
+  width: 300px;
+  top: 150px;
+  left: 0;
+  text-align: center;
+  font-size: 14px;
+}
