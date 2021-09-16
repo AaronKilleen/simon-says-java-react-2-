@@ -5,8 +5,6 @@ const bottomRight = document.querySelector('.bottom-right-panel');
 const scoreElement = document.getElementById('scoreValue');
 const hiscoreElement = document.getElementById('hiscoreValue');
 
-
-
 setCenterOffset();
 window.addEventListener("resize", setCenterOffset);
 function setCenterOffset()
@@ -61,6 +59,26 @@ const panelClicked = panelClicked => {
 	shortFlash(panelClicked);
     if (!canClick) return;
     const expectedPanel = sequenceToGuess.shift();
+    const panels = [topLeft, topRight, bottomLeft, bottomRight];
+	switch(panelClicked)
+	{
+		case panels[0]:
+        var mySound = new Audio("chimes.wav");
+        mySound.play();		
+        break;
+		case panels[1]:
+        var mySound = new Audio("chord.wav");
+        mySound.play();		
+		break;
+		case panels[2]:
+        var mySound = new Audio("notify.wav");
+        mySound.play();		
+        break;
+		case panels[3]:
+        var mySound = new Audio("tada.wav");
+        mySound.play();		
+        break;
+	}
     if (expectedPanel === panelClicked) {
         if (sequenceToGuess.length === 0){
             scoreIncrement();
@@ -80,7 +98,27 @@ const panelClicked = panelClicked => {
 
 const startFlashing = async () => {
     canClick = false;
+    const panels = [topLeft, topRight, bottomLeft, bottomRight];
     for (const panel of sequence){
+        switch(panel)
+		{
+		case panels[0]:
+        var mySound = new Audio("chimes.wav");
+        mySound.play();		
+        break;
+		case panels[1]:
+        var mySound = new Audio("chord.wav");
+        mySound.play();				
+        break;
+		case panels[2]:
+        var mySound = new Audio("notify.wav");
+        mySound.play();			
+        break;
+		case panels[3]:
+        var mySound = new Audio("tada.wav");
+        mySound.play();		
+        break;
+		}
         await flash(panel)
     }
     canClick = true;
