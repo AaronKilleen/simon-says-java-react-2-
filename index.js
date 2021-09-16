@@ -5,6 +5,20 @@ const bottomRight = document.querySelector('.bottom-right-panel');
 const scoreElement = document.getElementById('scoreValue');
 const hiscoreElement = document.getElementById('hiscoreValue');
 
+
+
+setCenterOffset();
+window.addEventListener("resize", setCenterOffset);
+function setCenterOffset()
+{
+let horizontalOffset = Math.round((window.innerWidth/2 - 100));
+let horizontalOffsetString = horizontalOffset.toString();
+horizontalOffsetString += 'px';
+center.style.left = horizontalOffsetString;
+}
+
+
+
 const getRandomPanel = () => {
     const panels = [topLeft, topRight, bottomLeft, bottomRight];
     return panels[parseInt(Math.random() * panels.length)]
@@ -25,12 +39,26 @@ const flash = panel => {
     });
 };
 
+const shortFlash = panel => {
+    return new Promise((resolve, reject) => {
+        panel.className += ' active';
+        setTimeout(() => {
+            panel.className = panel.className.replace(' active', '');
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        }, 100)
+    });
+};
+
+
 let canClick = false;
 let gameEnd = false;
 let score = 0;
 let hiscore = 0;
 
 const panelClicked = panelClicked => {
+	shortFlash(panelClicked);
     if (!canClick) return;
     const expectedPanel = sequenceToGuess.shift();
     if (expectedPanel === panelClicked) {
