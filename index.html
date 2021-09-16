@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <strong id="hiscore" class="score">HiScore: </strong> <span id="hiscoreValue" class="score">0</span>
+    <strong id="score" class="score">Score: </strong> <span id="scoreValue" class="score">0</span>
     <div>
         <div onclick="panelClicked(event.currentTarget)" class="panel top-left-panel"></div>
         <div onclick="panelClicked(event.currentTarget)" class="panel top-right-panel"></div>
@@ -17,6 +19,7 @@
         <div onclick="panelClicked(event.currentTarget)" class="panel bottom-right-panel"></div>
     </div>
     <div class="center"></div>
+    <button id="start" class="start" onclick="startFlashing()">Start</button>
 
     <script src="index.js"></script>
 </body>
