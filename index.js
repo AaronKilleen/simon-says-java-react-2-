@@ -10,7 +10,7 @@ const getRandomPanel = () => {
     return panels[parseInt(Math.random() * panels.length)]
 }
 
-const sequence = [getRandomPanel()];
+let sequence = [getRandomPanel()];
 let sequenceToGuess = [...sequence];
 
 const flash = panel => {
@@ -45,6 +45,8 @@ const panelClicked = panelClicked => {
         score = 0;
         scoreElement.innerHTML = score;
         alert('game over');
+        sequence = [getRandomPanel()];
+        sequenceToGuess = [...sequence];
     }
 };
 
